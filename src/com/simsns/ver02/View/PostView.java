@@ -1,6 +1,5 @@
 package com.simsns.ver02.View;
 
-import com.simsns.ver01.Comment;
 import com.simsns.ver02.controller.CommentDaoImpl;
 import com.simsns.ver02.controller.PostDaoImpl;
 import com.simsns.ver02.controller.UserDaoImpl;

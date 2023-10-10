@@ -6,8 +6,6 @@ import java.util.Vector;
 
 public class Post {
 
-    private UUID index = UUID.randomUUID(); // post 정보 내의 index
-
     private String title;
     private String content;
     private final UUID owner;
@@ -38,8 +36,6 @@ public class Post {
     public UUID getOwner() {
         return owner;
     }
-
-    public UUID getIndex() {return index;}
 
     public void setTitle(String title) {
         this.title = title;
