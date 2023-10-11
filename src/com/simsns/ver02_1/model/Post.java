@@ -1,9 +1,10 @@
-package com.simsns.ver02.model;
+package com.simsns.ver02_1.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class Post {
+public class Post implements Serializable {
 
     private String title;
     private String content;

@@ -1,10 +1,13 @@
-package com.simsns.ver02.View;
+package com.simsns.ver02_1.View;
 
-import com.simsns.ver02.model.Post;
-import com.simsns.ver02.controller.PostDaoImpl;
-import com.simsns.ver02.controller.UserDaoImpl;
+import com.simsns.ver02_1.controller.PostDaoImpl;
+import com.simsns.ver02_1.controller.UserDaoImpl;
+import com.simsns.ver02_1.model.Post;
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.UUID;
 
 public class UserView {
     private static UserView instance;
@@ -17,7 +20,8 @@ public class UserView {
 
     UUID curUserIndex = null;
 
-    private UserView() {}
+    private UserView() {
+    }
 
     public static UserView getInstance (){
         if (instance == null) {
@@ -31,7 +35,6 @@ public class UserView {
     public void signStream () {
         System.out.println("\n유저만 이용가능합니다!");
         System.out.println("[0]로그인 | [1]회원가입 | [2]아이디/비밀번호 분실");
-        System.out.print("입력 >> ");
 
         int select = util.scan();
 

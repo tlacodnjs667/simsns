@@ -4,6 +4,7 @@
 .idea
 out
 simsns.iml
+data/*
 
 ### Eclipse ###
 .apt_generated
