@@ -1,9 +1,9 @@
-package com.simsns.ver02_1.View;
+package com.simsns.ver02_2.View;
 
-import com.simsns.ver02_1.controller.CommentDaoImpl;
-import com.simsns.ver02_1.controller.PostDaoImpl;
-import com.simsns.ver02_1.controller.UserDaoImpl;
-import com.simsns.ver02_1.model.Post;
+import com.simsns.ver02_2.controller.CommentDaoImpl;
+import com.simsns.ver02_2.controller.PostDaoImpl;
+import com.simsns.ver02_2.controller.UserDaoImpl;
+import com.simsns.ver02_2.model.Post;
 
 import java.util.Map;
 import java.util.Scanner;

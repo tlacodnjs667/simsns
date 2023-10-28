@@ -1,4 +1,4 @@
-package com.simsns.ver02_1.View;
+package com.simsns.ver02_2.View;
 
 import java.util.Scanner;
 
@@ -19,7 +19,7 @@ public class Util {
 
     public int scan () {
         try {
-            System.out.print("입력 >> ");
+            System.out.print("\n입력 >> ");
             String scan = scanner.nextLine();
             if (scan.isEmpty()) {
                 throw new Exception ("EMPTY_INPUT");

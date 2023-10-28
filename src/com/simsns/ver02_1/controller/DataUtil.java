@@ -11,21 +11,26 @@ import java.util.UUID;
 public class DataUtil {
     private static final String userData = "data/users.txt";
     private static final String postData = "data/posts.txt";
+    private static final File postFile = new File(postData);
+    private static final File userFile = new File(userData);
 
     public static TreeMap<Integer, Post> getPosts (){
-        TreeMap<Integer, Post>posts = null;
-        try (
-                FileInputStream fin = new FileInputStream(postData);
-                BufferedInputStream bin = new BufferedInputStream(fin);
-                ObjectInputStream oin =new ObjectInputStream(bin);
-                ) {
+        TreeMap<Integer, Post> posts = null;
 
-            posts = (TreeMap<Integer, Post>) oin.readObject();
+        if (postFile.exists()) {
+            try (
+                    FileInputStream fin = new FileInputStream(postData);
+                    BufferedInputStream bin = new BufferedInputStream(fin);
+                    ObjectInputStream oin =new ObjectInputStream(bin);
+                    ) {
 
-        } catch ( ClassNotFoundException | IOException e) {
-            e.printStackTrace();
+                posts = (TreeMap<Integer, Post>) oin.readObject();
+
+            } catch ( ClassNotFoundException | IOException e) {
+                e.printStackTrace();
+            }
         }
-        return posts;
+        return posts == null ? new TreeMap<>() : posts;
     }
 
     public static void reservePosts (TreeMap<Integer, Post> posts)  {
@@ -46,18 +51,21 @@ public class DataUtil {
 
     public static HashMap<UUID, User> getUsers () {
         HashMap<UUID, User> users = null;
-        try (
-                FileInputStream fin = new FileInputStream(userData);
-                BufferedInputStream bin = new BufferedInputStream(fin);
-                ObjectInputStream oin =new ObjectInputStream(bin);
-        ) {
 
-            users = (HashMap<UUID, User>)oin.readObject();
+        if (userFile.exists()) {
+            try (
+                    FileInputStream fin = new FileInputStream(userData);
+                    BufferedInputStream bin = new BufferedInputStream(fin);
+                    ObjectInputStream oin =new ObjectInputStream(bin);
+            ) {
 
-        } catch ( ClassNotFoundException | IOException e) {
-            e.getStackTrace();
+                users = (HashMap<UUID, User>)oin.readObject();
+
+            } catch ( ClassNotFoundException | IOException e) {
+                e.getStackTrace();
+            }
         }
-        return users;
+        return users == null ? new HashMap<>() : users;
     }
 
     public static void reserveUsers (HashMap<UUID, User> users) {
